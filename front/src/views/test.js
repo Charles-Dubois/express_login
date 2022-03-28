@@ -40,23 +40,21 @@ export default function Sign() {
   const handleSurname = (e) => setSurname(e.target.value);
   const handleBirth = (e) => setBirth(e.target.value);
 
-  //   const onSubmit = () => {
-  //     const formData = new FormData();
-  //     formData.append("email", email);
-  //     formData.append("password", password);
-  //     formData.append("firstname", firstname);
-  //     formData.append("surname", surname);
-  //     formData.append("birth", birth);
+  const onSubmit = () => {
+    const formData = new FormData();
+    formData.append("email", email);
+    formData.append("password", password);
+    formData.append("firstname", firstname);
+    formData.append("surname", surname);
+    formData.append("birth", birth);
 
-  //     fetch("/user", {
-  //       method: "POST",
-  //       body: formData,
-  //     })
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setUserList(data);
-  //       });
-  //   };
+    fetch("/signup", {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  };
   return (
     <form onSubmit={handleSubmit(onFormSubmit)}>
       <div>

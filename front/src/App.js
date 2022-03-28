@@ -4,7 +4,7 @@ import "./App.css";
 import Admin from "./views/Admin";
 import Login from "./views/Login";
 import Signup from "./views/Signup";
-import Sign from "./views/sign";
+
 export default function App() {
   return (
     <Router>
@@ -20,10 +20,6 @@ export default function App() {
         <button>
           <Link to="/login">Login</Link>
         </button>
-
-        <button>
-          <Link to="/sign">Sign</Link>
-        </button>
       </nav>
       <Switch>
         <Route exact path="/admin">
@@ -34,10 +30,6 @@ export default function App() {
         </Route>
         <Route exact path="/login">
           <Login />
-        </Route>
-
-        <Route exact path="/sign">
-          <Sign />
         </Route>
       </Switch>
     </Router>
